@@ -1,0 +1,120 @@
+/* Comportements par appareil, appliqués après les styles du carnet. */
+html{box-sizing:border-box;scroll-padding-block:16px;overflow-x:clip}
+body{min-width:0;overflow-x:clip}
+main,.profiles,.profile,.toolbar,.tools,.collection-heading,.memory-item{min-width:0}
+button,a,input,select,textarea{touch-action:manipulation}
+.map-photos{display:contents}
+.map-destinations{display:none}
+.polaroid h3,.profile-route,.detail-copy,.note-card{overflow-wrap:anywhere}
+.map-pin .pin-hit-area{pointer-events:all}
+.card-middle .photo-placeholder:after{content:none}
+dialog{overscroll-behavior:contain;scrollbar-gutter:stable}
+dialog input,dialog select,dialog textarea{max-width:100%}
+.view-tabs button{min-height:44px}
+.header-right .icon-button,.header-right #add-top,.back-home{min-width:44px;min-height:44px}
+.back-home{display:flex;align-items:center;justify-content:center}
+
+/* Tablette, y compris en paysage. */
+@media(min-width:601px) and (max-width:1023px){
+ .topbar{margin-inline:2%;min-height:66px}.topbar h1{font-size:40px}
+ main{padding-inline:3%;max-width:100%}
+ .profiles{padding:22px 8% 18px;gap:10%;min-height:110px}
+ .profile-name{font-size:29px}.profile-route{font-size:11px;line-height:1.7}
+ .profile-caption{font-size:13px}
+ .scrapbook{height:540px;overflow:visible}
+ .map-paper{inset:0 14% 65px 17%}
+ .map-paper svg{width:100%;height:100%;margin:0}
+ .scrap-card{width:18%;max-width:155px}
+ .scrap-card .polaroid{padding:7px 7px 11px}
+ .scrap-card .polaroid h3{font-size:20px;line-height:1.1}
+ .scrap-card .photo-meta{font-size:8px;line-height:1.4}
+ .card-left{left:0;top:18px;bottom:auto}.card-right{right:0;top:32px;bottom:auto}
+ .card-bottom-left{left:0;bottom:5px;top:auto}.card-bottom-right{right:1%;bottom:5px;top:auto}
+ .card-middle{left:23%;bottom:28px;top:auto;width:17%}
+ .card-us{left:46%;right:auto;bottom:8px;top:auto;width:17%}
+ .side-note{left:0;top:46%;width:16%;font-size:18px}.postage{display:none}
+ .map-legend{font-size:8px;gap:8px;left:8px}
+ .map-pin text{font-size:20px}
+ .view-tabs{max-width:660px;gap:14px}.view-tabs button{min-width:0;flex:1}
+ .view-tabs button span{font-size:14px}
+ .toolbar{flex-direction:row;flex-wrap:wrap;align-items:center;gap:12px}
+ .toolbar .tools{width:auto;flex-basis:auto;border:0;padding:0}
+ .toolbar .person{font-size:12px;min-height:44px}
+ .tools .search input{font-size:13px;width:180px}
+ .counter{font-size:11px;max-width:none}
+ .memory-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:23px}
+ footer{flex-wrap:wrap;gap:15px}footer>span:nth-child(2){width:auto;order:initial}
+}
+
+/* Téléphone : carte dégagée, photos à faire défiler avec le doigt. */
+@media(max-width:600px){
+ .topbar{margin-inline:8px;padding:6px 8px;min-height:62px;display:grid;grid-template-columns:44px minmax(0,1fr) 88px;gap:2px;align-items:center}
+ .topbar h1{font-size:clamp(25px,7.2vw,37px);max-width:none;line-height:1.15;letter-spacing:0}
+ .back-home{position:static;font-size:30px;line-height:1}
+ .header-right{position:static;gap:0;justify-content:flex-end}
+ .header-right .icon-button{width:44px;height:44px;font-size:28px}
+ .header-right .button{width:44px;height:44px;padding:0;font-size:0;background:none;border:0}
+ .header-right .button span{font-size:28px}
+ main{padding:0 12px;max-width:100%}
+ .profiles{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;padding:22px 4px 20px;min-height:0}
+ .profile-name{font-size:clamp(20px,5.7vw,29px);gap:7px;white-space:normal;line-height:1.15}
+ .profile .avatar{width:25px;height:25px;flex-shrink:0;font-size:19px}
+ .profile-route{font-size:11px;line-height:1.65;margin:10px 0 0;max-width:none}
+ .profile-caption{font-size:13px;margin:5px 0 0;line-height:1.4}
+ .scrapbook{height:auto;display:flex;flex-direction:column;gap:19px;overflow:visible;margin:0}
+ .map-paper{position:relative;inset:auto;flex:none;width:100%;height:clamp(260px,75vw,385px);border:4px solid #e0ceb0;transform:none;clip-path:none;border-radius:7px}
+ .map-paper svg{width:100%;height:100%;margin:0;display:block}
+ .map-pin text{font-size:25px;stroke-width:5px}
+ .map-legend{left:6px;right:6px;bottom:7px;display:flex;flex-wrap:wrap;justify-content:center;gap:5px 10px;padding:7px 5px;font-size:9px;line-height:1.4}
+ .map-credit{font-size:5px;bottom:0;right:4px}.compass{top:7px;right:10px;font-size:11px}
+ .map-photos{display:flex;gap:17px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-padding-inline:9px;padding:12px 9px 17px;min-width:0;scrollbar-width:thin;scrollbar-color:#c3a47c transparent}
+ .scrap-card{position:relative!important;inset:auto!important;transform:none!important;width:160px!important;max-width:none;flex:0 0 160px;scroll-snap-align:start}
+ .scrap-card:nth-child(odd){transform:rotate(-1deg)!important}.scrap-card:nth-child(even){transform:rotate(1deg)!important}
+ .scrap-card .polaroid{padding:8px 8px 12px;height:100%}
+ .scrap-card .polaroid img,.scrap-card .photo-placeholder,.card-middle .photo-placeholder,.card-us .photo-placeholder{aspect-ratio:1.22;width:100%;font-size:40px}
+ .scrap-card .polaroid h3{font-size:22px;line-height:1.1;margin:9px 0 6px;min-height:0}
+ .scrap-card .photo-meta{font-size:10px;letter-spacing:0;line-height:1.4}
+ .scrap-card:before{width:48px;height:18px;left:calc(50% - 24px);top:-8px}
+ .card-middle .photo-placeholder:after{font-size:13px;top:35%;left:10px;right:10px}
+ .side-note,.postage,.board-doodle,.board-caption{display:none}
+ .map-destinations{display:flex;gap:7px;overflow-x:auto;overscroll-behavior-x:contain;padding:6px 0 13px;scrollbar-width:thin;scrollbar-color:#c3a47c transparent}
+ .destination-chip{display:flex;gap:7px;align-items:center;flex-shrink:0;min-height:44px;padding:9px 12px;border:1px solid #ddccb0;border-radius:22px;background:#fbf4e7;font-size:12px;white-space:nowrap}
+ .destination-chip svg{width:17px;height:20px;flex-shrink:0}.destination-chip[aria-pressed=true]{background:#ac825b;border-color:#a77a50;color:#fffdf6}
+ .section-heading{padding:7px;margin:2px 0 0;min-height:60px;border-radius:16px}
+ .view-tabs{max-width:none;gap:6px}.view-tabs button{flex:1;min-width:0;min-height:44px;padding:9px 7px;gap:7px}
+ .view-tabs button span{font-size:13px}.nav-icon{width:20px;height:20px}
+ .toolbar{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;padding:10px 0}
+ .toolbar .people{gap:4px;flex-wrap:wrap}.toolbar .person{font-size:12px;padding:7px 9px;min-height:44px}
+ .toolbar .avatar{width:22px;height:22px}.counter{font-size:10px;max-width:none;line-height:1.5}
+ .toolbar .tools{width:100%;grid-column:1/-1;border:0;padding:0;display:block}
+ .tools .search{display:flex;width:100%;max-width:none;padding:0 12px;border:1px solid #ddccb0;border-radius:24px;background:#fff9ef}
+ .tools .search input{width:100%;font-size:16px;padding:11px 0;min-height:44px}
+ .collection-heading{margin:24px 3px 22px;align-items:flex-start}.collection-heading h2{font-size:29px;max-width:none;line-height:1.2}
+ .collection-heading .eyebrow{font-size:9px;line-height:1.5}.collection-heading .text-button{font-size:12px;min-height:44px}
+ .memory-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 15px;margin:0 4px;padding:5px 0 16px}
+ .memory-item .polaroid{padding:7px 7px 11px}.memory-item .polaroid h3{font-size:22px;line-height:1.15}
+ .memory-item .photo-meta{font-size:10px;text-transform:none;letter-spacing:0}
+ .memory-item .favorite-small{width:44px;height:44px;top:8px;right:8px;font-size:24px}
+ .note-card{padding:22px 16px;min-height:210px}.note-card h3{font-size:26px}.note-card p{font-size:14px;line-height:1.7}.note-card small{font-size:11px}
+ .empty{padding:35px 18px}.empty p{font-size:14px;line-height:1.6}
+ .place-panel{padding:17px 14px;gap:14px}.place-panel p{font-size:12px;line-height:1.6}.place-panel .button{font-size:13px;min-height:44px}
+ .place-panel .icon-button,.close-dialog,#close-detail{min-width:44px;min-height:44px}
+ footer{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;padding:17px 5px calc(16px + env(safe-area-inset-bottom));margin-top:5px}
+ footer>span:first-child{font-size:21px}footer>span:nth-child(2){width:100%;font-size:11px;line-height:1.6;order:3}footer .text-button{font-size:12px;min-height:44px}
+ dialog{width:calc(100% - 20px);max-width:560px;max-height:calc(100dvh - 24px);padding:19px 16px;scrollbar-gutter:auto}
+ dialog input:not([type=file]),dialog select,dialog textarea{font-size:16px;min-height:44px}
+ form>label,.form-row>label{font-size:13px}.optional{font-size:11px}
+ .form-row{gap:8px}.form-row>label{min-width:0;flex-basis:calc(50% - 8px)}
+ .dialog-actions{flex-wrap:wrap;gap:8px}.dialog-actions .button{font-size:13px;min-height:44px;flex:1}
+ .button{min-height:44px}.detail-actions{gap:8px;flex-wrap:wrap}.detail-actions button{min-height:44px}.detail-copy .detail-note{font-size:15px}
+ .toast{bottom:calc(14px + env(safe-area-inset-bottom));width:max-content;max-width:calc(100% - 24px);font-size:13px;line-height:1.5;text-align:center}
+}
+@media(max-width:359px){
+ .topbar h1{font-size:24px}.profiles{gap:12px}.profile-name{font-size:20px;gap:5px}.profile .avatar{width:21px;height:21px}
+ .profile-route{font-size:10px}.toolbar{grid-template-columns:1fr}.counter{grid-column:1;text-align:left}
+ .memory-grid{grid-template-columns:1fr;margin-inline:16px}.form-row{flex-direction:column}.form-row>label{width:100%;flex-basis:auto}
+ .view-tabs button{gap:4px}.view-tabs button span{font-size:12px}.nav-icon{width:18px}
+}
+@media(min-width:601px) and (max-width:700px){.topbar h1{font-size:36px}.header-right .button{font-size:0;padding:6px;background:none}.header-right .button span{font-size:25px}.header-right{gap:4px}}
+@media(hover:none){.polaroid:hover{transform:none}.view-tabs button:hover{background:#f2e8d6}.view-tabs button.active:hover{background:#ac825b}}
+@media(prefers-reduced-motion:reduce){.map-photos{scroll-behavior:auto}}
